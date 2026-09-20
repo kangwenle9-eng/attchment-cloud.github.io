@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#132238">
+  <meta name="description" content="Codex 与 Agent 30 天学习实验室：课程、视频导航与综合项目。">
+  <title>Codex 与 Agent 30 天学习实验室</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23132238'/%3E%3Cpath d='M19 18h22a5 5 0 0 1 5 5v27H22a5 5 0 0 1-5-5V20a2 2 0 0 1 2-2Z' fill='%23fff'/%3E%3Cpath d='M23 26h16M23 33h16M23 40h10' stroke='%23f15a3a' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="课程导航">
+      <div class="brand">
+        <a href="#home" class="brand-mark" aria-label="返回首页">C</a>
+        <div>
+          <strong>Codex 学习实验室</strong>
+          <span>30 天 · 每天 45–60 分钟</span>
+        </div>
+      </div>
+
+      <nav class="primary-nav" aria-label="主要页面">
+        <a href="#home" data-route="home">学习总览</a>
+        <a href="#course/day-01" data-route="course">30 天课程</a>
+        <a href="#videos" data-route="videos">B 站学习导航</a>
+        <a href="#capstone" data-route="capstone">综合项目</a>
+        <a href="#resources" data-route="resources">资料与模板</a>
+      </nav>
+
+      <div class="course-nav" id="course-nav" aria-label="每日课程"></div>
+
+      <div class="sidebar-note">
+        完成状态只在通过实际验收后记录。本网页不会自动勾选课程。
+      </div>
+    </aside>
+
+    <button class="scrim" id="scrim" aria-label="关闭导航" hidden></button>
+
+    <div class="workspace">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" aria-label="打开课程导航" aria-expanded="false">☰</button>
+        <div class="search-wrap">
+          <label for="search" class="sr-only">搜索课程</label>
+          <span aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="搜索 30 天课程" autocomplete="off">
+        </div>
+        <a class="start-link" href="#course/day-01">从第 1 天开始</a>
+      </header>
+
+      <main id="main" tabindex="-1" aria-live="polite">
+        <div class="loading">正在载入课程…</div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
